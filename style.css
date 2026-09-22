@@ -1,258 +1,141 @@
 *{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:Georgia,"Times New Roman",serif;background:#11101b}
 
-html,body{margin:0;width:100%;min-height:100%;}
-
-body{
-  min-height:100vh;
-  overflow:hidden;
-  background:#11101b;
-  color:#fff;
-  font-family:Georgia,"Times New Roman",serif;
-}
-
-.page{
+.scene{
   position:relative;
   width:100%;
-  min-height:100svh;
+  height:100svh;
+  overflow:hidden;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  isolation:isolate;
   background:
-    radial-gradient(ellipse at 50% 55%,rgba(255,210,53,.14),transparent 25%),
-    radial-gradient(ellipse at 50% 100%,#33263b 0%,#171522 58%,#11101b 100%);
-}
-
-.page:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,.35) 100%);
-  z-index:5;
+    radial-gradient(ellipse at 50% 48%,rgba(255,211,50,.12),transparent 30%),
+    radial-gradient(ellipse at 50% 100%,#33243a 0,#171522 58%,#11101b 100%);
 }
 
 .stars{
   position:absolute;
   inset:0;
-  opacity:.5;
+  opacity:.48;
   background-image:
     radial-gradient(circle,#fff 0 1px,transparent 1.5px),
     radial-gradient(circle,#fff 0 .8px,transparent 1.4px);
-  background-size:77px 77px,127px 127px;
-  background-position:10px 20px,48px 65px;
-  animation:starMove 18s linear infinite;
+  background-size:73px 73px,121px 121px;
+  background-position:12px 17px,48px 58px;
+  animation:stars 18s linear infinite;
 }
 
-.aurora{
+.glow{
   position:absolute;
-  width:75vw;
-  height:45vw;
-  max-width:650px;
-  max-height:390px;
+  width:65vw;
+  height:65vw;
+  max-width:620px;
+  max-height:620px;
   border-radius:50%;
-  background:rgba(255,207,45,.09);
-  filter:blur(45px);
-  animation:breath 5s ease-in-out infinite;
-}
-
-.bouquet-wrap{
-  position:relative;
-  width:min(94vw,620px);
-  height:min(83svh,730px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:2;
+  background:rgba(255,211,45,.10);
+  filter:blur(42px);
+  animation:glow 4.5s ease-in-out infinite;
 }
 
 .bouquet{
-  width:100%;
-  max-width:600px;
-  filter:drop-shadow(0 18px 22px rgba(0,0,0,.22));
+  position:relative;
+  width:min(96vw,650px);
+  height:min(86svh,760px);
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.bouquet-svg{
-  display:block;
+.art{
   width:100%;
-  height:auto;
+  height:100%;
+  display:block;
   overflow:visible;
 }
 
 .stems path{
   stroke-dasharray:430;
   stroke-dashoffset:430;
-  animation:growStem 1.6s cubic-bezier(.2,.8,.2,1) forwards;
+  animation:stem 1s ease-out forwards;
 }
-
 .stems path:nth-child(2){animation-delay:.08s}
 .stems path:nth-child(3){animation-delay:.16s}
 .stems path:nth-child(4){animation-delay:.24s}
 .stems path:nth-child(5){animation-delay:.32s}
-.stems path:nth-child(6){animation-delay:.4s}
+.stems path:nth-child(6){animation-delay:.40s}
 .stems path:nth-child(7){animation-delay:.48s}
-
-.flower{
-  transform-box:fill-box;
-  transform-origin:center;
-  opacity:0;
-  animation:bloom .75s cubic-bezier(.2,1.5,.4,1) forwards;
-}
-
-.flower-back:nth-of-type(1){animation-delay:.45s}
-.flower-back:nth-of-type(2){animation-delay:.55s}
-.flower-back:nth-of-type(3){animation-delay:.65s}
-.flower-back:nth-of-type(4){animation-delay:.75s}
-.flower-back:nth-of-type(5){animation-delay:.85s}
-.hero-flower{animation-delay:.95s}
-.flower-front:nth-of-type(7){animation-delay:1.05s}
-.flower-front:nth-of-type(8){animation-delay:1.15s}
-
-.petal{
-  fill:url(#petal);
-  stroke:#efb40e;
-  stroke-width:1.5;
-}
-
-.flower-center{
-  fill:url(#center);
-  stroke:#6f4500;
-  stroke-width:2;
-}
+.stems path:nth-child(8){animation-delay:.56s}
+.stems path:nth-child(9){animation-delay:.64s}
 
 .leaves{
   opacity:0;
-  animation:fadeUp .8s .8s ease forwards;
   transform-origin:center;
+  animation:show .7s .6s ease-out forwards;
 }
+
+.flower{
+  opacity:0;
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:bloom .65s cubic-bezier(.2,1.4,.3,1) forwards;
+}
+.f1{animation-delay:.45s}.f2{animation-delay:.52s}.f3{animation-delay:.59s}
+.f4{animation-delay:.66s}.f5{animation-delay:.73s}.f6{animation-delay:.80s}.f7{animation-delay:.87s}
+.f8{animation-delay:.94s}.f9{animation-delay:1.01s}.f10{animation-delay:1.08s}
+.f11{animation-delay:1.15s}.f12{animation-delay:1.22s}
 
 .wrapper{
   opacity:0;
-  transform-origin:300px 640px;
-  animation:wrapIn 1s 1.25s cubic-bezier(.2,.9,.2,1) forwards;
+  transform-origin:300px 650px;
+  animation:wrap 1s 1.35s cubic-bezier(.2,.9,.2,1) forwards;
 }
 
 .message{
   position:absolute;
-  z-index:8;
-  bottom:clamp(18px,5vh,48px);
-  display:flex;
-  align-items:center;
-  gap:13px;
+  z-index:4;
+  bottom:clamp(14px,3.5vh,35px);
+  color:#fff8d1;
+  font-size:clamp(16px,4.5vw,23px);
+  letter-spacing:1.2px;
+  text-shadow:0 2px 12px rgba(255,215,70,.35);
   opacity:0;
-  animation:messageIn 1s 2.1s ease forwards;
+  animation:message 1s 2.1s ease forwards;
 }
+.message span{color:#ffd83b;margin-left:3px}
 
-.message p{
-  margin:0;
-  font-size:clamp(17px,4.3vw,25px);
-  letter-spacing:1.5px;
-  text-shadow:0 2px 14px rgba(255,215,67,.35);
-}
-
-.line{
-  display:block;
-  width:clamp(35px,10vw,75px);
-  height:1px;
-  background:linear-gradient(90deg,transparent,#e9c34b);
-}
-
-.line:last-child{
-  background:linear-gradient(90deg,#e9c34b,transparent);
-}
-
-.petal-fall{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:7;
-  overflow:hidden;
-}
-
-.petal-fall span{
-  position:absolute;
-  top:-20px;
-  color:#ffe46a;
-  font-size:12px;
-  opacity:0;
-  animation:fall 8s linear infinite;
-}
-
-.petal-fall span:nth-child(1){left:15%;animation-delay:3s}
-.petal-fall span:nth-child(2){left:32%;animation-delay:5s}
-.petal-fall span:nth-child(3){left:68%;animation-delay:4s}
-.petal-fall span:nth-child(4){left:82%;animation-delay:6s}
-.petal-fall span:nth-child(5){left:55%;animation-delay:7s}
-
-@keyframes growStem{
-  to{stroke-dashoffset:0}
-}
-
+@keyframes stem{to{stroke-dashoffset:0}}
 @keyframes bloom{
-  0%{opacity:0;transform:scale(.15) rotate(-18deg)}
-  70%{opacity:1;transform:scale(1.06) rotate(4deg)}
-  100%{opacity:1;transform:scale(1) rotate(0)}
+  0%{opacity:0;transform:scale(.12)}
+  70%{opacity:1;transform:scale(1.08)}
+  100%{opacity:1;transform:scale(1)}
 }
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(18px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes wrapIn{
-  from{opacity:0;transform:scale(.72) translateY(35px)}
+@keyframes show{to{opacity:1}}
+@keyframes wrap{
+  from{opacity:0;transform:scale(.75) translateY(35px)}
   to{opacity:1;transform:scale(1) translateY(0)}
 }
-
-@keyframes messageIn{
-  from{opacity:0;transform:translateY(14px)}
+@keyframes message{
+  from{opacity:0;transform:translateY(12px)}
   to{opacity:1;transform:translateY(0)}
 }
-
-@keyframes breath{
-  0%,100%{transform:scale(.88);opacity:.55}
-  50%{transform:scale(1.08);opacity:.95}
+@keyframes stars{to{transform:translateY(73px)}}
+@keyframes glow{
+  0%,100%{transform:scale(.88);opacity:.5}
+  50%{transform:scale(1.08);opacity:.9}
 }
 
-@keyframes starMove{
-  from{transform:translateY(0)}
-  to{transform:translateY(77px)}
-}
-
-@keyframes fall{
-  0%{transform:translate3d(0,-30px,0) rotate(0);opacity:0}
-  10%{opacity:.7}
-  90%{opacity:.35}
-  100%{transform:translate3d(80px,105vh,0) rotate(270deg);opacity:0}
-}
-
-@media (max-width:600px){
-  .bouquet-wrap{
-    width:100vw;
-    height:82svh;
+@media(max-width:600px){
+  .bouquet{
+    width:112vw;
+    height:88svh;
     margin-top:-2vh;
   }
-
-  .bouquet{
-    width:108vw;
-  }
-
-  .message{
-    bottom:2.2vh;
-  }
+  .message{bottom:1.8vh}
 }
-
-@media (max-height:650px){
-  .bouquet-wrap{height:79svh}
-  .bouquet{width:min(86vw,500px)}
-  .message{bottom:10px}
-}
-
-@media (prefers-reduced-motion:reduce){
-  *,*:before,*:after{
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-  }
+@media(max-height:650px){
+  .bouquet{height:84svh;width:96vw}
+  .message{bottom:8px}
 }
