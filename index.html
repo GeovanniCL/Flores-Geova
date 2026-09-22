@@ -49,44 +49,20 @@
 
       <ellipse cx="300" cy="315" rx="235" ry="225" fill="#ffd632" opacity=".13" filter="url(#soft)"/>
 
-      <!-- TALLOS: cortos y juntos -->
-      <g class="stems" stroke="url(#green)" stroke-width="8" fill="none" stroke-linecap="round">
-        <path d="M300 560 Q285 405 105 245"/>
-        <path d="M300 560 Q292 390 165 185"/>
-        <path d="M300 560 Q296 370 230 150"/>
-        <path d="M300 560 Q300 360 300 125"/>
-        <path d="M300 560 Q305 370 370 150"/>
-        <path d="M300 560 Q308 390 435 185"/>
-        <path d="M300 560 Q315 405 495 245"/>
-        <path d="M300 560 Q280 420 215 225"/>
-        <path d="M300 560 Q320 420 385 225"/>
+      <!-- UN SOLO TALLO -->
+      <g class="stems" stroke="url(#green)" stroke-width="9" fill="none" stroke-linecap="round">
+        <path d="M300 560 Q300 350 300 125"/>
       </g>
 
       <!-- HOJAS -->
       <g class="leaves">
-        <path d="M226 420 Q130 408 112 345 Q180 340 226 420Z" fill="url(#leaf)"/>
-        <path d="M374 420 Q470 408 488 345 Q420 340 374 420Z" fill="url(#leaf)"/>
-        <path d="M255 470 Q175 463 158 415 Q215 410 255 470Z" fill="url(#leaf)"/>
-        <path d="M345 470 Q425 463 442 415 Q385 410 345 470Z" fill="url(#leaf)"/>
-        <path d="M218 355 Q155 325 158 280 Q207 295 218 355Z" fill="url(#leaf)"/>
-        <path d="M382 355 Q445 325 442 280 Q393 295 382 355Z" fill="url(#leaf)"/>
+        <path d="M270 425 Q190 405 165 350 Q230 350 270 425Z" fill="url(#leaf)"/>
+        <path d="M330 425 Q410 405 435 350 Q370 350 330 425Z" fill="url(#leaf)"/>
       </g>
-
-      <!-- FLORES TRASERAS -->
-      <g class="flower f1" transform="translate(105 245) scale(.82)"><use href="#flowerShape"/></g>
-      <g class="flower f2" transform="translate(165 185) scale(.92)"><use href="#flowerShape"/></g>
-      <g class="flower f3" transform="translate(230 150) scale(.95)"><use href="#flowerShape"/></g>
-      <g class="flower f4" transform="translate(300 125) scale(.98)"><use href="#flowerShape"/></g>
-      <g class="flower f5" transform="translate(370 150) scale(.95)"><use href="#flowerShape"/></g>
-      <g class="flower f6" transform="translate(435 185) scale(.92)"><use href="#flowerShape"/></g>
-      <g class="flower f7" transform="translate(495 245) scale(.82)"><use href="#flowerShape"/></g>
-
-      <!-- FLORES DELANTERAS: rellenan el centro -->
-      <g class="flower front f8" transform="translate(180 265) scale(.88)"><use href="#flowerShape"/></g>
-      <g class="flower front f9" transform="translate(250 235) scale(.94)"><use href="#flowerShape"/></g>
-      <g class="flower front f10" transform="translate(350 235) scale(.94)"><use href="#flowerShape"/></g>
-      <g class="flower front f11" transform="translate(420 265) scale(.88)"><use href="#flowerShape"/></g>
-      <g class="flower front f12" transform="translate(300 275) scale(1.02)"><use href="#flowerShape"/></g>
+      <!-- UNA SOLA FLOR -->
+      <g class="flower f1" transform="translate(300 125) scale(1.12)">
+        <use href="#flowerShape"/>
+      </g>
 
       <!-- Definición de una flor, reutilizada -->
       <g id="flowerShape">
