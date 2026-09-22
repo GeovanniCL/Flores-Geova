@@ -1,0 +1,350 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #ffd92f;
+  --yellow-light: #fff36a;
+  --yellow-dark: #e9a900;
+  --green: #2e8b57;
+  --green-dark: #155b3a;
+  --paper: #fff8e8;
+  --bg1: #171522;
+  --bg2: #30243a;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 214, 64, .12), transparent 28%),
+    radial-gradient(circle at 50% 100%, #483246 0, var(--bg1) 62%);
+  color: white;
+}
+
+.scene {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.scene::before,
+.scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.scene::before {
+  opacity: .35;
+  background-image:
+    radial-gradient(circle, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle, #ffe66b 0 1px, transparent 1.5px);
+  background-size: 90px 90px, 140px 140px;
+  background-position: 20px 10px, 60px 50px;
+  animation: stars 8s linear infinite;
+}
+
+.glow {
+  position: absolute;
+  width: min(70vw, 620px);
+  height: min(70vw, 620px);
+  border-radius: 50%;
+  background: rgba(255, 214, 49, .09);
+  filter: blur(50px);
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.bouquet {
+  position: relative;
+  width: min(88vw, 620px);
+  height: min(88vh, 700px);
+  transform: translateY(3%);
+  animation: float 5s ease-in-out infinite;
+}
+
+.flowers {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 52%;
+}
+
+.flower {
+  --size: 118px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  animation: flowerSway 4s ease-in-out infinite;
+  filter: drop-shadow(0 8px 9px rgba(0,0,0,.25));
+}
+
+.flower .petals {
+  position: absolute;
+  inset: 4%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 5%, var(--yellow-light) 0 25%, transparent 27%),
+    radial-gradient(ellipse at 95% 50%, var(--yellow) 0 25%, transparent 27%),
+    radial-gradient(ellipse at 50% 95%, #f6bd13 0 25%, transparent 27%),
+    radial-gradient(ellipse at 5% 50%, #ffe84b 0 25%, transparent 27%),
+    radial-gradient(ellipse at 80% 19%, #ffd92f 0 24%, transparent 26%),
+    radial-gradient(ellipse at 81% 81%, #f6c51c 0 24%, transparent 26%),
+    radial-gradient(ellipse at 19% 81%, #ffd92f 0 24%, transparent 26%),
+    radial-gradient(ellipse at 19% 19%, #fff05a 0 24%, transparent 26%);
+  transform: rotate(8deg);
+}
+
+.flower .center {
+  position: absolute;
+  width: 35%;
+  height: 35%;
+  left: 32.5%;
+  top: 32.5%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, #8d5b00 0 8%, transparent 9%),
+    radial-gradient(circle at 70% 40%, #a96e00 0 7%, transparent 8%),
+    radial-gradient(circle at 45% 70%, #754700 0 7%, transparent 8%),
+    #9a6100;
+  box-shadow: inset 0 2px 5px rgba(255,255,255,.25), 0 3px 5px rgba(0,0,0,.25);
+  z-index: 2;
+}
+
+.f1 { left: 50%; top: 17%; --size: 132px; animation-delay: -.2s; }
+.f2 { left: 27%; top: 29%; --size: 106px; animation-delay: -.8s; }
+.f3 { left: 72%; top: 29%; --size: 108px; animation-delay: -1.3s; }
+.f4 { left: 39%; top: 8%; --size: 91px; animation-delay: -1.9s; }
+.f5 { left: 61%; top: 8%; --size: 94px; animation-delay: -2.4s; }
+.f6 { left: 18%; top: 42%; --size: 83px; animation-delay: -3s; }
+.f7 { left: 82%; top: 42%; --size: 85px; animation-delay: -3.6s; }
+
+.stems {
+  position: absolute;
+  width: 220px;
+  height: 370px;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.stems span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 9px;
+  height: 100%;
+  border-radius: 100%;
+  background: linear-gradient(90deg, var(--green-dark), #49a76e, var(--green-dark));
+  transform-origin: top;
+}
+
+.stems span:nth-child(1) { transform: rotate(-19deg); }
+.stems span:nth-child(2) { transform: rotate(-11deg); }
+.stems span:nth-child(3) { transform: rotate(-5deg); }
+.stems span:nth-child(4) { transform: rotate(0deg); }
+.stems span:nth-child(5) { transform: rotate(6deg); }
+.stems span:nth-child(6) { transform: rotate(13deg); }
+.stems span:nth-child(7) { transform: rotate(20deg); }
+
+.leaves {
+  position: absolute;
+  width: 290px;
+  height: 330px;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.leaf {
+  position: absolute;
+  width: 72px;
+  height: 30px;
+  border-radius: 100% 0 100% 0;
+  background: linear-gradient(135deg, #65b879, #19653f);
+  box-shadow: inset 3px 2px 4px rgba(255,255,255,.15);
+  transform-origin: 0 50%;
+}
+
+.leaf::after {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 2px;
+  left: 7px;
+  top: 14px;
+  background: rgba(220,255,224,.35);
+  transform: rotate(-8deg);
+}
+
+.l1 { left: 26px; top: 100px; transform: rotate(163deg); }
+.l2 { left: 46px; top: 178px; transform: rotate(145deg) scale(.9); }
+.l3 { left: 70px; top: 238px; transform: rotate(157deg) scale(.85); }
+.l4 { right: 22px; top: 110px; transform: rotate(12deg); }
+.l5 { right: 39px; top: 182px; transform: rotate(30deg) scale(.9); }
+.l6 { right: 65px; top: 245px; transform: rotate(22deg) scale(.82); }
+
+.wrap {
+  position: absolute;
+  width: 350px;
+  height: 280px;
+  left: 50%;
+  bottom: 1%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  clip-path: polygon(5% 8%, 95% 0, 70% 100%, 30% 100%);
+  background: var(--paper);
+  box-shadow: 0 18px 25px rgba(0,0,0,.3);
+}
+
+.paper-back {
+  transform: rotate(9deg) scale(.94);
+  background: #e9e1d1;
+  z-index: 0;
+}
+
+.paper-front {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.8), transparent 45%),
+    repeating-linear-gradient(90deg, rgba(180,150,100,.04) 0 2px, transparent 2px 6px),
+    var(--paper);
+  z-index: 1;
+}
+
+.ribbon {
+  position: absolute;
+  width: 160px;
+  height: 60px;
+  left: 50%;
+  bottom: 48px;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+}
+
+.ribbon::before,
+.ribbon::after {
+  content: "";
+  position: absolute;
+  width: 78px;
+  height: 52px;
+  background: linear-gradient(135deg, #d89a13, #ffd84a);
+  top: 4px;
+  z-index: -1;
+}
+
+.ribbon::before {
+  right: 49%;
+  transform: skewX(20deg) rotate(18deg);
+  clip-path: polygon(0 15%, 100% 0, 80% 100%, 0 75%);
+}
+
+.ribbon::after {
+  left: 49%;
+  transform: skewX(-20deg) rotate(-18deg);
+  clip-path: polygon(0 0, 100% 15%, 100% 75%, 20% 100%);
+}
+
+.ribbon span {
+  width: 55px;
+  height: 15px;
+  border-radius: 20px;
+  background: #efb51d;
+}
+
+.ribbon b {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff7c2;
+  font-size: 16px;
+  background: radial-gradient(circle at 35% 30%, #ffe878, #d99509);
+  box-shadow: 0 4px 8px rgba(0,0,0,.22);
+}
+
+.message {
+  position: absolute;
+  bottom: 3.5vh;
+  margin: 0;
+  font-size: clamp(18px, 3vw, 25px);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(255, 220, 75, .35);
+  animation: textIn 2s ease both;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(3%); }
+  50% { transform: translateY(0); }
+}
+
+@keyframes flowerSway {
+  0%, 100% { rotate: -1deg; }
+  50% { rotate: 2deg; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(.9); opacity: .55; }
+  50% { transform: scale(1.08); opacity: .9; }
+}
+
+@keyframes stars {
+  from { transform: translateY(0); }
+  to { transform: translateY(90px); }
+}
+
+@keyframes textIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .bouquet {
+    width: 100vw;
+    height: 82vh;
+  }
+
+  .wrap {
+    width: 300px;
+    height: 245px;
+  }
+
+  .stems {
+    transform: translateX(-50%) scale(.85);
+    top: 30%;
+  }
+
+  .leaves {
+    transform: translateX(-50%) scale(.85);
+    top: 37%;
+  }
+
+  .message {
+    bottom: 2vh;
+  }
+}
