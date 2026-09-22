@@ -1,100 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#11101b">
-<title>Flores amarillas</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
 </head>
+
 <body>
-<div class="scene">
-  <div class="stars"></div>
-  <div class="glow"></div>
+    <div class="greetings">
+        <span>H</span>
+        <span>o</span>
+        <span>l</span>
+        <span>a</span>
+        <span>!</span>
+    </div>
+    <div class="description">
+        <span>ESTE DETALLE ES PARA TI :)</span>
+    </div>
+    <div class="button">
+        <button class="botones">
+            <a href="flower.html" style="color: #fff;">CLICK AQUÍ</a>
+        </button>
+    </div>
 
-  <main class="bouquet">
-    <svg viewBox="0 0 600 720" class="art" aria-label="Ramo de flores amarillas">
-      <defs>
-        <radialGradient id="yellow" cx="35%" cy="25%">
-          <stop offset="0" stop-color="#fff56b"/>
-          <stop offset=".65" stop-color="#ffd52d"/>
-          <stop offset="1" stop-color="#e8a900"/>
-        </radialGradient>
-        <radialGradient id="brown" cx="35%" cy="30%">
-          <stop offset="0" stop-color="#d99b18"/>
-          <stop offset=".55" stop-color="#a96700"/>
-          <stop offset="1" stop-color="#704000"/>
-        </radialGradient>
-        <linearGradient id="green" x1="0" x2="1">
-          <stop stop-color="#17633d"/>
-          <stop offset=".5" stop-color="#55bd79"/>
-          <stop offset="1" stop-color="#17633d"/>
-        </linearGradient>
-        <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#6fd18d"/>
-          <stop offset="1" stop-color="#17613d"/>
-        </linearGradient>
-        <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#fffef8"/>
-          <stop offset=".55" stop-color="#f3ead7"/>
-          <stop offset="1" stop-color="#d8ccb4"/>
-        </linearGradient>
-        <filter id="shadow">
-          <feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".35"/>
-        </filter>
-        <filter id="soft">
-          <feGaussianBlur stdDeviation="16"/>
-        </filter>
-      </defs>
-
-      <ellipse cx="300" cy="315" rx="235" ry="225" fill="#ffd632" opacity=".13" filter="url(#soft)"/>
-
-      <!-- UN SOLO TALLO -->
-      <g class="stems" stroke="url(#green)" stroke-width="9" fill="none" stroke-linecap="round">
-        <path d="M300 560 Q300 350 300 125"/>
-      </g>
-
-      <!-- HOJAS -->
-      <g class="leaves">
-        <path d="M270 425 Q190 405 165 350 Q230 350 270 425Z" fill="url(#leaf)"/>
-        <path d="M330 425 Q410 405 435 350 Q370 350 330 425Z" fill="url(#leaf)"/>
-      </g>
-      <!-- UNA SOLA FLOR -->
-      <g class="flower f1" transform="translate(300 125) scale(1.12)">
-        <use href="#flowerShape"/>
-      </g>
-
-      <!-- Definición de una flor, reutilizada -->
-      <g id="flowerShape">
-        <circle r="43" cx="0" cy="-25" fill="url(#yellow)"/>
-        <circle r="43" cx="24" cy="-8" fill="url(#yellow)"/>
-        <circle r="43" cx="15" cy="22" fill="url(#yellow)"/>
-        <circle r="43" cx="-15" cy="22" fill="url(#yellow)"/>
-        <circle r="43" cx="-24" cy="-8" fill="url(#yellow)"/>
-        <circle r="31" fill="url(#brown)"/>
-        <circle r="21" fill="#a96b00" opacity=".72"/>
-      </g>
-
-      <!-- ENVOLTURA -->
-      <g class="wrapper" filter="url(#shadow)">
-        <path d="M155 450 L445 450 L385 650 L215 650 Z" fill="url(#paper)"/>
-        <path d="M155 450 L300 478 L215 650 L190 610 Z" fill="#fffef8" opacity=".9"/>
-        <path d="M445 450 L300 478 L385 650 L410 610 Z" fill="#e2d7c2" opacity=".8"/>
-        <path d="M155 450 L445 450 L425 500 L175 500 Z" fill="#fffef8"/>
-        <path d="M175 500 Q300 520 425 500" fill="none" stroke="#d6c9b2" stroke-width="2"/>
-
-        <!-- cinta -->
-        <path d="M240 555 Q190 535 170 555 Q195 578 242 568Z" fill="#e5a812"/>
-        <path d="M360 555 Q410 535 430 555 Q405 578 358 568Z" fill="#e5a812"/>
-        <path d="M238 550 L362 550 L354 578 L246 578Z" fill="#f4bd22"/>
-        <circle cx="300" cy="564" r="23" fill="#ffd947"/>
-        <circle cx="300" cy="564" r="15" fill="#e5a812"/>
-        <path d="M300 552 L304 560 L313 561 L306 567 L308 576 L300 571 L292 576 L294 567 L287 561 L296 560Z" fill="#fff9c8"/>
-      </g>
-    </svg>
-  </main>
-
-  <div class="message">Para ti, con cariño <span>♥</span></div>
-</div>
 </body>
+
 </html>
