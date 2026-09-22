@@ -2,44 +2,196 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flores amarillas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#11101b">
+  <title>Flores amarillas 💛</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="scene">
-    <div class="glow"></div>
+  <main class="page">
+    <div class="stars"></div>
+    <div class="aurora"></div>
 
-    <section class="bouquet" aria-label="Ramo de flores amarillas animado">
-      <div class="flowers">
-        <div class="flower f1"><span class="petals"></span><span class="center"></span></div>
-        <div class="flower f2"><span class="petals"></span><span class="center"></span></div>
-        <div class="flower f3"><span class="petals"></span><span class="center"></span></div>
-        <div class="flower f4"><span class="petals"></span><span class="center"></span></div>
-        <div class="flower f5"><span class="petals"></span><span class="center"></span></div>
-        <div class="flower f6"><span class="petals"></span><span class="center"></span></div>
-        <div class="flower f7"><span class="petals"></span><span class="center"></span></div>
-      </div>
+    <div class="petal-fall" aria-hidden="true">
+      <span>✦</span><span>·</span><span>✦</span><span>·</span><span>✦</span>
+    </div>
 
-      <div class="stems">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
+    <section class="bouquet-wrap">
+      <div class="bouquet">
+        <svg class="bouquet-svg" viewBox="0 0 600 700" role="img"
+             aria-label="Ramo de flores amarillas">
+          <defs>
+            <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fff36b"/>
+              <stop offset=".48" stop-color="#ffd52e"/>
+              <stop offset="1" stop-color="#efa900"/>
+            </linearGradient>
 
-      <div class="leaves">
-        <i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i>
-        <i class="leaf l4"></i><i class="leaf l5"></i><i class="leaf l6"></i>
-      </div>
+            <radialGradient id="center" cx="35%" cy="30%">
+              <stop offset="0" stop-color="#d99a19"/>
+              <stop offset=".55" stop-color="#a96b00"/>
+              <stop offset="1" stop-color="#704300"/>
+            </radialGradient>
 
-      <div class="wrap">
-        <div class="paper paper-back"></div>
-        <div class="paper paper-front"></div>
-        <div class="ribbon">
-          <span></span><b>✦</b><span></span>
-        </div>
+            <linearGradient id="stem" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#17643e"/>
+              <stop offset=".5" stop-color="#54b979"/>
+              <stop offset="1" stop-color="#17643e"/>
+            </linearGradient>
+
+            <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#6dca88"/>
+              <stop offset="1" stop-color="#17633e"/>
+            </linearGradient>
+
+            <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fffdf5"/>
+              <stop offset=".55" stop-color="#f7f0df"/>
+              <stop offset="1" stop-color="#ddd3bd"/>
+            </linearGradient>
+
+            <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+              <feDropShadow dx="0" dy="10" stdDeviation="10" flood-opacity=".32"/>
+            </filter>
+
+            <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="9"/>
+            </filter>
+          </defs>
+
+          <!-- glow -->
+          <ellipse cx="300" cy="330" rx="190" ry="180" fill="#ffd83d" opacity=".12" filter="url(#glow)"/>
+
+          <!-- stems: curved, gathered naturally -->
+          <g class="stems" fill="none" stroke="url(#stem)" stroke-width="9" stroke-linecap="round">
+            <path d="M300 570 C296 470 205 350 120 220"/>
+            <path d="M300 570 C290 450 235 320 205 175"/>
+            <path d="M300 570 C295 430 270 270 275 125"/>
+            <path d="M300 570 C305 430 330 260 325 115"/>
+            <path d="M300 570 C310 450 370 300 395 170"/>
+            <path d="M300 570 C315 465 410 350 480 235"/>
+            <path d="M300 570 C325 475 455 390 505 285"/>
+          </g>
+
+          <!-- leaves behind flowers -->
+          <g class="leaves">
+            <g class="leaf leaf1">
+              <path d="M222 438 C145 435 112 390 126 355 C180 356 220 388 222 438Z" fill="url(#leaf)"/>
+              <path d="M137 368 C166 389 192 408 215 429" fill="none" stroke="#a6e3b2" stroke-width="2" opacity=".55"/>
+            </g>
+            <g class="leaf leaf2">
+              <path d="M378 420 C450 410 487 366 477 331 C426 337 391 366 378 420Z" fill="url(#leaf)"/>
+              <path d="M465 344 C432 366 406 391 384 412" fill="none" stroke="#a6e3b2" stroke-width="2" opacity=".55"/>
+            </g>
+            <g class="leaf leaf3">
+              <path d="M250 500 C184 493 160 460 169 432 C213 438 244 461 250 500Z" fill="url(#leaf)"/>
+            </g>
+            <g class="leaf leaf4">
+              <path d="M354 505 C418 495 444 460 435 432 C392 438 363 462 354 505Z" fill="url(#leaf)"/>
+            </g>
+          </g>
+
+          <!-- flowers -->
+          <g class="flower flower-back" transform="translate(122 210)">
+            <circle class="petal p1" cx="0" cy="-34" r="34"/>
+            <circle class="petal p2" cx="32" cy="-10" r="34"/>
+            <circle class="petal p3" cx="20" cy="28" r="34"/>
+            <circle class="petal p4" cx="-20" cy="28" r="34"/>
+            <circle class="petal p5" cx="-32" cy="-10" r="34"/>
+            <circle class="flower-center" r="27"/>
+          </g>
+
+          <g class="flower flower-back" transform="translate(205 165)">
+            <circle class="petal p1" cx="0" cy="-36" r="36"/>
+            <circle class="petal p2" cx="34" cy="-11" r="36"/>
+            <circle class="petal p3" cx="21" cy="29" r="36"/>
+            <circle class="petal p4" cx="-21" cy="29" r="36"/>
+            <circle class="petal p5" cx="-34" cy="-11" r="36"/>
+            <circle class="flower-center" r="28"/>
+          </g>
+
+          <g class="flower flower-back" transform="translate(325 115)">
+            <circle class="petal p1" cx="0" cy="-39" r="39"/>
+            <circle class="petal p2" cx="37" cy="-12" r="39"/>
+            <circle class="petal p3" cx="23" cy="31" r="39"/>
+            <circle class="petal p4" cx="-23" cy="31" r="39"/>
+            <circle class="petal p5" cx="-37" cy="-12" r="39"/>
+            <circle class="flower-center" r="30"/>
+          </g>
+
+          <g class="flower flower-back" transform="translate(395 170)">
+            <circle class="petal p1" cx="0" cy="-35" r="35"/>
+            <circle class="petal p2" cx="33" cy="-11" r="35"/>
+            <circle class="petal p3" cx="21" cy="28" r="35"/>
+            <circle class="petal p4" cx="-21" cy="28" r="35"/>
+            <circle class="petal p5" cx="-33" cy="-11" r="35"/>
+            <circle class="flower-center" r="27"/>
+          </g>
+
+          <g class="flower flower-back" transform="translate(480 235)">
+            <circle class="petal p1" cx="0" cy="-31" r="31"/>
+            <circle class="petal p2" cx="30" cy="-10" r="31"/>
+            <circle class="petal p3" cx="19" cy="25" r="31"/>
+            <circle class="petal p4" cx="-19" cy="25" r="31"/>
+            <circle class="petal p5" cx="-30" cy="-10" r="31"/>
+            <circle class="flower-center" r="24"/>
+          </g>
+
+          <!-- center flower -->
+          <g class="flower hero-flower" transform="translate(275 165)">
+            <circle class="petal p1" cx="0" cy="-49" r="47"/>
+            <circle class="petal p2" cx="47" cy="-15" r="47"/>
+            <circle class="petal p3" cx="29" cy="40" r="47"/>
+            <circle class="petal p4" cx="-29" cy="40" r="47"/>
+            <circle class="petal p5" cx="-47" cy="-15" r="47"/>
+            <circle class="flower-center" r="34"/>
+          </g>
+
+          <!-- front flowers -->
+          <g class="flower flower-front" transform="translate(205 250)">
+            <circle class="petal p1" cx="0" cy="-38" r="37"/>
+            <circle class="petal p2" cx="36" cy="-12" r="37"/>
+            <circle class="petal p3" cx="22" cy="31" r="37"/>
+            <circle class="petal p4" cx="-22" cy="31" r="37"/>
+            <circle class="petal p5" cx="-36" cy="-12" r="37"/>
+            <circle class="flower-center" r="29"/>
+          </g>
+
+          <g class="flower flower-front" transform="translate(395 250)">
+            <circle class="petal p1" cx="0" cy="-38" r="37"/>
+            <circle class="petal p2" cx="36" cy="-12" r="37"/>
+            <circle class="petal p3" cx="22" cy="31" r="37"/>
+            <circle class="petal p4" cx="-22" cy="31" r="37"/>
+            <circle class="petal p5" cx="-36" cy="-12" r="37"/>
+            <circle class="flower-center" r="29"/>
+          </g>
+
+          <!-- wrapping paper -->
+          <g class="wrapper" filter="url(#shadow)">
+            <path d="M175 448 L425 448 L372 640 L228 640 Z" fill="url(#paper)"/>
+            <path d="M175 448 L300 475 L228 640 L205 610 Z" fill="#fffdf6" opacity=".9"/>
+            <path d="M425 448 L300 475 L372 640 L395 610 Z" fill="#e7decb" opacity=".85"/>
+            <path d="M175 448 L425 448 L407 490 L193 490 Z" fill="#fffdf5"/>
+            <path d="M190 490 Q300 510 410 490" fill="none" stroke="#d8cdb8" stroke-width="2" opacity=".6"/>
+
+            <!-- ribbon -->
+            <path d="M228 548 C197 530 181 535 176 548 C195 560 214 566 238 559Z" fill="#e8ae17"/>
+            <path d="M372 548 C403 530 419 535 424 548 C405 560 386 566 362 559Z" fill="#e8ae17"/>
+            <path d="M238 544 L362 544 L352 570 L248 570 Z" fill="#f3bf24"/>
+            <circle cx="300" cy="557" r="21" fill="#ffd94b"/>
+            <circle cx="300" cy="557" r="14" fill="#e9ac16"/>
+            <path d="M296 548 L300 555 L307 556 L301 561 L303 568 L297 564 L291 568 L293 561 L287 556 L294 555Z"
+                  fill="#fff8bf"/>
+          </g>
+        </svg>
       </div>
     </section>
 
-    <p class="message">Para ti, con cariño 💛</p>
+    <div class="message">
+      <span class="line"></span>
+      <p>Para ti, con cariño</p>
+      <span class="line"></span>
+    </div>
   </main>
 </body>
 </html>
